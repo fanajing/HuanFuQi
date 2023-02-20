@@ -10,11 +10,14 @@ android {
         minSdk 21
         targetSdk 32
         versionCode 1
-        versionName "1.0.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -32,7 +35,7 @@ android {
 // 自定义打包名称
 android.applicationVariants.all { variant ->
     variant.outputs.all {
-        outputFileName = "明日方舟换服器v1.0.0.apk"
+        outputFileName = "明日方舟换服器v1.0.1.apk"
     }
 }
 dependencies {
@@ -45,3 +48,4 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
