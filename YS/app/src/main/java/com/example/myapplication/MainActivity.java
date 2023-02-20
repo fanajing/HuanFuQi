@@ -36,7 +36,6 @@ public class MainActivity<i> extends AppCompatActivity {
     private static boolean bilibiliDirAuthed = false;
     private static boolean xiaomiDirAuthed = false;
     private static boolean guojiDirAuthed = false;
-    private static boolean authorizationDirAuthed = false;
 
 
 
@@ -103,19 +102,6 @@ public class MainActivity<i> extends AppCompatActivity {
         }
     }
 
-    //退出(只能清理当前运行进程)
-//    public void exit(){
-//        try {
-//            Thread.sleep(5000);
-//            //TODO
-//            Intent intent = new Intent(Intent.ACTION_MAIN);
-//            intent.addCategory(Intent.CATEGORY_HOME);
-//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//            startActivity(intent); finish();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
 
     //删除
 
@@ -152,6 +138,101 @@ public class MainActivity<i> extends AppCompatActivity {
         builder.show();
 
     }
+    //删除il2cpp
+    public void deleteil2cpp(View view) {
+        Toast.makeText(this, "正在执行，请根据提示点击！", Toast.LENGTH_SHORT).show();
+        //创建AlertDialog构造器Builder对象，AlertDialog建议使用android.support.v7.app包下的。
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //设置对话框标题
+        builder.setTitle("请选择要修复的服务器");
+        //设置对话框图标
+        builder.setIcon(R.drawable.ic_launcher);
+        final String[] sexs = new String[]{"官服", "b服","米服","国际服"};
+        //设置单选选项
+        builder.setSingleChoiceItems(sexs, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "准备修复："+sexs[which], Toast.LENGTH_SHORT).show();
+                if(sexs[which]=="官服"){
+                    deleteil2cppguan();
+                }else if(sexs[which]=="b服"){
+                    deleteil2cppB();
+                }else if(sexs[which]=="米服"){
+                    deleteil2cppMI();
+                }else if(sexs[which]=="国际服"){
+                    deleteil2cppGUO();
+                }
+
+            }
+        });
+        //创建并显示对话框
+        builder.show();
+
+    }
+    //教程
+    public void jc(View view) {
+        Toast.makeText(this, "打开2p即可", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "正在跳转视频", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse("https://www.bilibili.com/video/BV1JM4y1D7X5?p=2");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        return;
+
+    }
+    //官服修复
+    public boolean deleteil2cppguan() {
+        String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
+        String officialDirName = externalStoragePath + OFFICIAL_NAME+"/files/il2cpp";
+        if(!officialDirAuthed) {
+            startFor(officialDirName, 10);
+            return false;
+        }
+        DocumentFile officialDir = DocumentFile.fromTreeUri(this, Uri.parse(changeToUri3(officialDirName)));
+        Toast.makeText(this, "官服资源文件修复成功！", Toast.LENGTH_SHORT).show();
+        officialDir.delete();
+        return false;
+    }
+    //b服修复
+    public boolean deleteil2cppB() {
+        String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
+        String bilibiliDirName = externalStoragePath + BILIBILI_NAME+"/files/il2cpp";
+        if(!bilibiliDirAuthed) {
+            startFor(bilibiliDirName, 11);
+            return false;
+        }
+        DocumentFile bilibiliDir = DocumentFile.fromTreeUri(this, Uri.parse(changeToUri3(bilibiliDirName)));
+        Toast.makeText(this, "B服资源文件修复成功！", Toast.LENGTH_SHORT).show();
+        bilibiliDir.delete();
+        return false;
+    }
+    //米服修复
+    public boolean deleteil2cppMI() {
+        String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
+        String xiaomiDirName = externalStoragePath + XIAOMI_NAME+"/files/il2cpp";
+        if(!xiaomiDirAuthed) {
+            startFor(xiaomiDirName, 12);
+            return false;
+        }
+        DocumentFile xiaomiDir = DocumentFile.fromTreeUri(this, Uri.parse(changeToUri3(xiaomiDirName)));
+        Toast.makeText(this, "米服资源文件修复成功！", Toast.LENGTH_SHORT).show();
+        xiaomiDir.delete();
+        return false;
+    }
+    //国际服修复
+    public boolean deleteil2cppGUO() {
+        String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
+        String guojiDirName = externalStoragePath + GUOJI_NAME+"/files/il2cpp";
+        if(!guojiDirAuthed) {
+            startFor(guojiDirName, 13);
+            return false;
+        }
+        DocumentFile guojiDir = DocumentFile.fromTreeUri(this, Uri.parse(changeToUri3(guojiDirName)));
+        Toast.makeText(this, "国际服资源文件修复成功！", Toast.LENGTH_SHORT).show();
+        guojiDir.delete();
+        return false;
+    }
+
+    //删除
     public boolean deleteofficial() {
         String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
         String officialDirName = externalStoragePath + OFFICIAL_NAME;
@@ -679,10 +760,6 @@ int i;
             if(requestCode == 13) {
                 Toast.makeText(this, "国际服授权成功！", Toast.LENGTH_SHORT).show();
                 guojiDirAuthed = true;
-            }
-            if(requestCode == 9) {
-                Toast.makeText(this, "授权成功！", Toast.LENGTH_SHORT).show();
-                authorizationDirAuthed = true;
             }
         }
 
