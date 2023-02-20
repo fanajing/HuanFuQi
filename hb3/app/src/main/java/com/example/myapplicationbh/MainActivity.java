@@ -130,6 +130,15 @@ public class MainActivity<i> extends AppCompatActivity {
         builder.show();
 
     }
+    //教程
+    public void jc(View view) {
+        Toast.makeText(this, "正在跳转视频", Toast.LENGTH_SHORT).show();
+        Uri uri = Uri.parse("https://www.bilibili.com/video/av906526219/");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        return;
+
+    }
     public boolean deleteofficial() {
         String externalStoragePath = Environment.getExternalStorageDirectory().getPath() + "/Android/data/";
         String officialDirName = externalStoragePath + OFFICIAL_NAME;

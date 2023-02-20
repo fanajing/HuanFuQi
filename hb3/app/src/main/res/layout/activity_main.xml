@@ -132,7 +132,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="290dp" />
+            android:layout_height="115dp" />
 
         <Button
             android:id="@+id/delete"
@@ -140,6 +140,35 @@
             android:layout_height="wrap_content"
             android:onClick="delete"
             android:text="删除文件（谨慎点击）" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="32dp"
+                    android:layout_height="49dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/jc"
+                    android:layout_width="123dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="jc"
+                    android:text="教程" />
+
+                <Space
+                    android:layout_width="24dp"
+                    android:layout_height="47dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
