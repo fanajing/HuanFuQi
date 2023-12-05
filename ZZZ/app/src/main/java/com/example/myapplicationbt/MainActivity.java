@@ -47,8 +47,8 @@ public class MainActivity<i> extends AppCompatActivity {
     //请求状态码
     private static int REQUEST_PERMISSION_CODE = 1;
 
-    public static final String OFFICIAL_NAME = "com.miHoYo.hkrpg";
-    public static final String BILIBILI_NAME = "com.miHoYo.hkrpg.bilibili";
+    public static final String OFFICIAL_NAME = "com.miHoYo.Nap";
+    public static final String BILIBILI_NAME = "com.miHoYo.Nap.bilibili";
     int x = 0;
 
     @Override
