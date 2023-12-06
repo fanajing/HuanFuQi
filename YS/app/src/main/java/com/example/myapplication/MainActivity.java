@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -15,8 +16,10 @@ import android.provider.DocumentsContract;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,7 +30,11 @@ import android.os.Bundle;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.documentfile.provider.DocumentFile;
-
+import android.app.Activity;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
+import android.widget.TextView;
 import java.io.File;
 
 @RequiresApi(api = Build.VERSION_CODES.R)
@@ -36,7 +43,10 @@ public class MainActivity<i> extends AppCompatActivity {
     private static boolean bilibiliDirAuthed = false;
     private static boolean xiaomiDirAuthed = false;
     private static boolean guojiDirAuthed = false;
-
+    // 这里添加你的App Key、Secret Key和Sign Key
+    private String appKey = "MVfWdMiAkestxgh3ohzjESmb6uuUbhTw";
+    private String secretKey = "5smtisTQ7z0p6O4h9hyH3PbxnCGoG8Ch";
+    private String signKey = "65#atFnd5qfAgKu35V4@hY1kBzo-00om";
 
 
     //读写权限
@@ -78,8 +88,26 @@ public class MainActivity<i> extends AppCompatActivity {
                 startActivityForResult(intent, 1024);
             }
         }
+        // 获取应用的版本号
+        String appVersion = getAppVersion();
 
+        // 找到 TextView4 控件
+        TextView textView4 = findViewById(R.id.textView4);
+
+        // 设置版本号到 TextView4 中
+        textView4.setText("版本号: " + appVersion);
     }
+
+    private String getAppVersion() {
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            return pInfo.versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return "未知";
+        }
+    }
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -173,11 +201,44 @@ public class MainActivity<i> extends AppCompatActivity {
     public void jc(View view) {
         Toast.makeText(this, "打开2p即可", Toast.LENGTH_SHORT).show();
         Toast.makeText(this, "正在跳转视频", Toast.LENGTH_SHORT).show();
-        Uri uri = Uri.parse("https://www.bilibili.com/video/BV1JM4y1D7X5?p=2");
+        Uri uri = Uri.parse("https://www.bilibili.com/video/BV1dV4y1Y76W");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
         return;
 
+    }
+
+    //更新
+    public void gx(View view) {
+        Toast.makeText(this, "密码已经复制到剪贴板了", Toast.LENGTH_SHORT).show();
+        copyToClipboard("1234");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //设置对话框标题
+        builder.setTitle("点击下方跳转下载链接");
+        //设置对话框图标
+        builder.setIcon(R.drawable.ic_launcher);
+        final String[] sexs = new String[]{"下载"};
+        //设置单选选项
+        builder.setSingleChoiceItems(sexs, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                gxx();
+            }
+        });
+        //创建并显示对话框
+        builder.show();
+        return;
+    }
+    public void gxx() {
+        Uri uri = Uri.parse("https://wwlv.lanzout.com/b01liirri");
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
+        // 显示复制成功的提示
+    }
+    //复制文本
+    private void copyToClipboard(String text) {
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboard.setText(text);
     }
     //官服修复
     public boolean deleteil2cppguan() {

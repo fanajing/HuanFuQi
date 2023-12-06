@@ -19,9 +19,28 @@
             android:layout_width="match_parent"
             android:layout_height="42dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </LinearLayout>
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="61dp" />
+            android:layout_height="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="                      点击上方按钮之后点击下面启动游戏"
             android:textColor="#2196F3"
-            android:visibility="visible" />
+            android:visibility="invisible" />
 
         <LinearLayout
             android:id="@+id/list1"
@@ -253,7 +272,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="101dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -296,12 +315,24 @@
                     android:layout_height="49dp"
                     android:layout_weight="1" />
 
+                <Button
+                    android:id="@+id/gx"
+                    android:layout_width="11dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="gx"
+                    android:text="检查更新" />
+
                 <Space
                     android:layout_width="wrap_content"
                     android:layout_height="47dp"
                     android:layout_weight="1" />
             </LinearLayout>
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
