@@ -1,17 +1,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget.myapplicationbt.AppWidget.Container"
+    style="@style/Widget.myapplicationzz.AppWidget.Container"
     android:layout_width="280dp"
     android:layout_height="120dp"
     android:background="#00FFFFFF"
     android:backgroundTint="#00FFFFFF"
     android:foregroundTint="#00FFFFFF"
-    android:theme="@style/Theme.myapplicationbt.AppWidgetContainer">
+    android:theme="@style/Theme.myapplicationzz.AppWidgetContainer">
 
     <TextView
         android:id="@+id/appwidget_text"
-        style="@style/Widget.myapplicationbt.AppWidget.InnerView"
+        style="@style/Widget.myapplicationzz.AppWidget.InnerView"
         android:layout_width="264dp"
         android:layout_height="104dp"
         android:layout_marginTop="-1dp"
