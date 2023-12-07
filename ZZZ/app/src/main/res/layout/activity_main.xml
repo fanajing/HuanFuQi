@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/zzbg"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="0dp">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="75dp" />
+            android:layout_height="27dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,7 +64,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="137dp"
             android:text="                      点击上方按钮之后点击下面启动游戏"
             android:textColor="#2196F3"
             android:visibility="visible" />
@@ -152,7 +154,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="161dp" />
+            android:layout_height="34dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
