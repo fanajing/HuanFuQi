@@ -15,11 +15,25 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="42dp" />
+            android:layout_height="73dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="39dp" />
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="74dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="214dp"
+                android:layout_height="54dp"
+                android:layout_weight="1"
+                android:text="TextView" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,7 +153,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="161dp" />
+            android:layout_height="60dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -189,6 +203,21 @@
                     android:layout_height="wrap_content"
                     android:onClick="jc"
                     android:text="教程" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/gx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="gx"
+                    android:text="更新" />
 
                 <Space
                     android:layout_width="24dp"
