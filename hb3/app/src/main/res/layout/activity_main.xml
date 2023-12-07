@@ -19,9 +19,24 @@
             android:layout_width="match_parent"
             android:layout_height="42dp" />
 
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="61dp" />
+            android:layout_height="89dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="63dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="304dp"
+                android:layout_height="62dp"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -162,6 +177,21 @@
                     android:layout_height="wrap_content"
                     android:onClick="jc"
                     android:text="教程" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/gx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="gx"
+                    android:text="更新" />
 
                 <Space
                     android:layout_width="24dp"
