@@ -93,7 +93,7 @@
                     android:onClick="startBilibili"
                     android:padding="8dp"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/bf" />
+                    app:srcCompat="@drawable/zzzb" />
 
                 <TextView
                     android:id="@+id/textView2"

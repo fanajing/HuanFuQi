@@ -168,7 +168,7 @@ public class MainActivity<i> extends AppCompatActivity {
         //设置对话框标题
         builder.setTitle("点击下方跳转下载链接");
         //设置对话框图标
-        builder.setIcon(R.drawable.ic_launcher);
+        builder.setIcon(R.drawable.zzz);
         final String[] sexs = new String[]{"下载"};
         //设置单选选项
         builder.setSingleChoiceItems(sexs, -1, new DialogInterface.OnClickListener() {
@@ -229,7 +229,7 @@ int i;
         //设置对话框标题
         builder.setTitle("请选择你现在有数据的服务器");
         //设置对话框图标
-        builder.setIcon(R.drawable.gf);
+        builder.setIcon(R.drawable.zzz);
         final String[] sexs = new String[]{"官服", "b服"};
         //设置单选选项
         builder.setSingleChoiceItems(sexs, -1, new DialogInterface.OnClickListener() {
