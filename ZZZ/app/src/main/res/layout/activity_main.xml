@@ -33,7 +33,10 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="370dp"
-                android:layout_height="72dp" />
+                android:layout_height="72dp"
+                android:textColor="@color/white"
+
+                android:text="点击选择现在的服务器"/>
         </LinearLayout>
 
         <LinearLayout
