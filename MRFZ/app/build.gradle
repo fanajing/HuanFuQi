@@ -10,7 +10,7 @@ android {
         minSdk 21
         targetSdk 32
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -35,7 +35,7 @@ android {
 // 自定义打包名称
 android.applicationVariants.all { variant ->
     variant.outputs.all {
-        outputFileName = "明日方舟换服器v1.0.1.apk"
+        outputFileName = "明日方舟换服器v1.2.apk"
     }
 }
 dependencies {
