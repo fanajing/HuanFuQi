@@ -10,7 +10,7 @@ android {
         minSdk 21
         targetSdk 32
         versionCode 1
-        versionName "2.4.0"
+        versionName "2.5.2-beta"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -32,12 +32,12 @@ android {
 // 自定义打包名称
 android.applicationVariants.all { variant ->
     variant.outputs.all {
-        outputFileName = "原神四服启动器v2.4.0.apk"
+        outputFileName = "原神四服启动器v2.5.2-beta.apk"
     }
 }
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'io.github.azhon:appupdate:4.3.1'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

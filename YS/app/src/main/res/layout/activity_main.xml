@@ -244,11 +244,12 @@
                 android:layout_weight="1" />
 
             <Button
-                android:id="@+id/delete"
+                android:id="@+id/demo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="delete"
-                android:text="删除文件（谨慎点击）" />
+                android:layout_weight="1"
+                android:onClick="jiance"
+                android:text="检测(授权)" />
 
             <Space
                 android:layout_width="wrap_content"
@@ -317,11 +318,23 @@
 
                 <Button
                     android:id="@+id/gx"
-                    android:layout_width="11dp"
+                    android:layout_width="61dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="gx"
-                    android:text="检查更新" />
+                    android:text="更新" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="116dp"
+                    android:layout_height="wrap_content"
+                    android:onClick="delete"
+                    android:text="删除文件" />
 
                 <Space
                     android:layout_width="wrap_content"

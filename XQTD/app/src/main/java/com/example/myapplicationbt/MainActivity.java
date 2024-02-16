@@ -168,7 +168,8 @@ public class MainActivity<i> extends AppCompatActivity {
         Toast.makeText(this, "官服资源文件删除成功！", Toast.LENGTH_SHORT).show();
         officialDir.delete();
         return false;
-    } //更新
+    }
+    //更新
     public void gx(View view) {
         Toast.makeText(this, "密码已经复制到剪贴板了", Toast.LENGTH_SHORT).show();
         copyToClipboard("1234");
